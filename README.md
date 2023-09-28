@@ -41,17 +41,17 @@ git clone https://github.com/aws/aws-lambda-base-images
 
 Then, checkout the branch relevant to the Lambda base image you want to build.
 
-eg. to build the `nodejs12.x` image, start by checking out the `nodejs12.x` branch:
+eg. to build the `nodejs18.x` image, start by checking out the `nodejs18.x` branch:
 ```
-git checkout nodejs12.x
+git checkout nodejs18.x
 ```
 
 Finally you can build your image as such:
 ```
-docker build -t nodejs12.x:local -f Dockerfile.nodejs12.x .
+docker build -t nodejs18.x:local -f Dockerfile.nodejs18.x .
 ```
 
-This will use the Dockerfile at `Dockerfile.nodejs12.x` and tag the newly-built image as `nodejs12.x:local`.
+This will use the Dockerfile at `Dockerfile.nodejs18.x` and tag the newly-built image as `nodejs18.x:local`.
 
 
 ## Licence
