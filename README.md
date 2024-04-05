@@ -45,6 +45,12 @@ eg. to build the `nodejs18.x` image, start by checking out the `nodejs18.x` bran
 ```
 git checkout nodejs18.x
 ```
+fetch the large files
+```
+git lfs fetch
+git lfs install
+git lfs checkout .
+```
 
 Finally you can build your image as such:
 ```
