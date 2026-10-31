@@ -1,0 +1,26 @@
+FROM scratch
+
+ADD 01be0cb42fe3898d221fc642b2633164093f554d557bf8b8c90ec7cc6e2aeca7.tar.xz /
+ADD 14bf4f182990797156b967935e695a1d9a6a65d901387ea7cc6dc5e1003f9806.tar.xz /
+ADD 4291113fbcc6a066b26db3c38cf11baf5dc63203b6dd923e415cb4e82efd5e40.tar.xz /
+ADD a1fe3793c1b53f256faa4698480e167d875fb036d4ff3afbaeef29a52a7b8419.tar.xz /
+ADD ab26feafcfbb50812a0f360e22f33ae88330ec32023d3058e2020ecf0b4518c7.tar.xz /
+ADD adac8d7d56b73acb2e7dd805bceb17bc0d65bdda11b38f71df9438ae48fe802f.tar.xz /
+ADD bb7d148f9678c8108af6e08bc93efe536770e5f3b2a1cd013fe5070e7828c836.tar.xz /
+ADD ec0f9438def45b279b87efa3833b2ea35192db0451e7520608550f7f0f77cfd5.tar.xz /
+
+ENV LANG=en_US.UTF-8
+ENV TZ=:/etc/localtime
+ENV PATH=/var/lang/bin:/usr/local/bin:/usr/bin/:/bin:/opt/bin
+ENV LD_LIBRARY_PATH=/var/lang/lib:/lib64:/usr/lib64:/var/runtime:/var/runtime/lib:/var/task:/var/task/lib:/opt/lib
+ENV LAMBDA_TASK_ROOT=/var/task
+ENV LAMBDA_RUNTIME_DIR=/var/runtime
+ENV DOTNET_VERSION=10.0.14
+ENV DOTNET_RUNNING_IN_CONTAINER=true
+ENV DOTNET_ROOT=/var/lang/bin
+ENV DOTNET_NOLOGO=true
+ENV DOTNET_CLI_TELEMETRY_OPTOUT=true
+
+WORKDIR /var/task
+
+ENTRYPOINT ["/lambda-entrypoint.sh"]
