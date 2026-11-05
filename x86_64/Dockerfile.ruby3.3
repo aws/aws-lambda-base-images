@@ -1,0 +1,19 @@
+FROM scratch
+
+ADD 18d7ca7e5df9e7d6d0ce7933a7a83aef356e3d30a1d929e943578d13fb76c1d6.tar.xz /
+ADD 353b1f57725869c77534719a84c7be893c1b6d8f91eda91df02a794c23cc480b.tar.xz /
+ADD 4fcf4c7de4e48097dfe8de26d4ccc3bbe6e5e85e70018223af68c0647c6549ef.tar.xz /
+ADD 55d0225afd8b2f744ab37a271e1f8aa8d5256986b77771ab3e281c350a29817f.tar.xz /
+ADD b5147f3b576bc3d3fdc3f136b92fd7f25564edd65cc1fdb57fbdcaf87b961af2.tar.xz /
+ADD d447ee4450f616a32f2a4d5c5a2bc12bac32e3431cdc07b9225dbaee20ffc53d.tar.xz /
+
+ENV LANG=en_US.UTF-8
+ENV TZ=:/etc/localtime
+ENV PATH=/var/lang/bin:/usr/local/bin:/usr/bin/:/bin:/opt/bin
+ENV LD_LIBRARY_PATH=/var/lang/lib:/lib64:/usr/lib64:/var/runtime:/var/runtime/lib:/var/task:/var/task/lib:/opt/lib
+ENV LAMBDA_TASK_ROOT=/var/task
+ENV LAMBDA_RUNTIME_DIR=/var/runtime
+
+WORKDIR /var/task
+
+ENTRYPOINT ["/lambda-entrypoint.sh"]
